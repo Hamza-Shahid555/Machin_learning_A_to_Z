@@ -1,0 +1,94 @@
+Normalization in data preprocessing / machine learning means scaling numerical data into a specific range (usually 0 to 1) without distorting the differences in the values.
+
+🔹 Formal Definition:
+
+Normalization is the process of transforming data values into a common scale so that they can be compared meaningfully.
+
+🔹 Why we need it?
+
+Different features may have very different scales (e.g., salary in lakhs vs. age in years).
+
+Many ML algorithms (KNN, Neural Networks, Gradient Descent–based models) perform better and converge faster when data is normalized.
+
+Prevents large-scale features from dominating small-scale features.
+
+🔹 Common Normalization Techniques:
+
+Min-Max Normalization (Rescaling)
+
+𝑋
+𝑛
+𝑜
+𝑟
+𝑚
+=
+𝑋
+−
+𝑋
+𝑚
+𝑖
+𝑛
+𝑋
+𝑚
+𝑎
+𝑥
+−
+𝑋
+𝑚
+𝑖
+𝑛
+X
+norm
+	​
+
+=
+X
+max
+	​
+
+−X
+min
+	​
+
+X−X
+min
+	​
+
+	​
+
+
+Scales data into [0,1] range.
+
+Z-score Normalization (Standardization)
+
+𝑋
+𝑠
+𝑡
+𝑑
+=
+𝑋
+−
+𝜇
+𝜎
+X
+std
+	​
+
+=
+σ
+X−μ
+	​
+
+
+Mean becomes 0, standard deviation becomes 1.
+
+Decimal Scaling
+Moves the decimal point of values until they fall into a range like [-1, 1].
+
+🔹 Example:
+
+Original data: [20, 40, 60, 80, 100]
+
+Min-Max Normalization (0–1 scale): [0.0, 0.25, 0.5, 0.75, 1.0]
+
+Z-score Normalization: [-1.26, -0.63, 0, 0.63, 1.26]
