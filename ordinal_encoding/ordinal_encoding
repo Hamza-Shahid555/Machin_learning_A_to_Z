@@ -1,0 +1,36 @@
+Ordinal Encoding
+
+Ordinal encoding is a technique used in machine learning preprocessing to convert categorical data (non-numeric) into numeric values, but in a way that preserves the order (rank) of the categories.
+
+🔑 Key Points
+
+Used when categorical features have a natural ordering.
+
+Each category is assigned an integer value based on its order.
+
+Example: Education level, size, ratings, etc.
+
+✅ Example
+
+Suppose you have a feature called Education Level:
+
+Education Level	Ordinal Encoding
+Primary	1
+Secondary	2
+Bachelor	3
+Master	4
+PhD	5
+
+Here, the order Primary < Secondary < Bachelor < Master < PhD is preserved.
+
+🧠 Why Use It?
+
+Algorithms like Linear Regression, Decision Trees, XGBoost, Logistic Regression need numeric input.
+
+It makes sense when the categories have rank or hierarchy.
+
+⚠️ When Not to Use
+
+If categories don’t have order (e.g., colors: red, blue, green), then ordinal encoding introduces fake order, which may confuse models.
+
+In such cases, use One-Hot Encoding instead.
