@@ -1,0 +1,113 @@
+
+# Regularized Linear Models
+
+## 📌 Introduction
+
+Regularized Linear Models extend traditional linear regression by adding a **penalty term** to the loss function. This helps prevent **overfitting**, improves **generalization**, and handles **multicollinearity** in datasets.
+
+---
+
+## 🔍 Why Regularization?
+
+Linear regression may fail when:
+
+* Too many features exist
+* Features are highly correlated
+* Model overfits training data
+
+Regularization controls model complexity by shrinking coefficients.
+
+---
+
+## 📊 Types of Regularized Models
+
+### Ridge Regression (L2)
+
+* Penalizes squared coefficients
+* Shrinks weights but keeps all features
+* Good for multicollinearity
+
+**Loss**
+
+```
+RSS + λ Σ w²
+```
+
+---
+
+### Lasso Regression (L1)
+
+* Penalizes absolute coefficients
+* Can remove irrelevant features
+* Produces sparse models
+
+**Loss**
+
+```
+RSS + λ Σ |w|
+```
+
+---
+
+### Elastic Net
+
+* Combination of L1 and L2
+* Handles correlated features better
+* Balanced feature selection
+
+**Loss**
+
+```
+RSS + λ₁ Σ |w| + λ₂ Σ w²
+```
+
+---
+
+## 🆚 Model Comparison
+
+| Model             | Regularization | Feature Selection | Multicollinearity |
+| ----------------- | -------------- | ----------------- | ----------------- |
+| Linear Regression | ❌ None         | ❌ No              | ❌ No              |
+| Ridge             | ✅ L2           | ❌ No              | ✅ Yes             |
+| Lasso             | ✅ L1           | ✅ Yes             | ⚠️ Limited        |
+| Elastic Net       | ✅ L1 + L2      | ✅ Yes             | ✅ Yes             |
+
+---
+
+## ⚙️ Installation
+
+```bash
+pip install scikit-learn
+```
+
+---
+
+## 🧪 Example Usage
+
+```python
+from sklearn.linear_model import Ridge, Lasso, ElasticNet
+
+model_ridge = Ridge(alpha=1.0)
+model_lasso = Lasso(alpha=0.1)
+model_elastic = ElasticNet(alpha=0.1, l1_ratio=0.5)
+```
+
+---
+
+## 📈 Applications
+
+* Medical prediction systems
+* Finance and risk modeling
+* High-dimensional datasets
+* Feature selection problems
+
+---
+
+## 📝 Key Takeaways
+
+* Regularization reduces overfitting
+* Ridge improves stability
+* Lasso performs feature selection
+* Elastic Net combines both benefits
+
+---
